@@ -13,7 +13,7 @@ export class HttpArticleService extends ArticleService {
   }
 
   refresh() {
-    this.http.get<Article[]>('http://localhost:3000/api/articles').subscribe({
+    this.http.get<Article[]>('/api/articles').subscribe({
       next: (articles) => {
         this.articles = articles;
       },

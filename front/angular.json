@@ -75,7 +75,8 @@
           },
           "defaultConfiguration": "development",
           "options": {
-            "port": 4600
+            "port": 4600,
+            "proxyConfig": "src/proxy.conf.json"
           }
         },
         "extract-i18n": {
