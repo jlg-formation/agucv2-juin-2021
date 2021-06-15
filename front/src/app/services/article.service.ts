@@ -28,4 +28,9 @@ export class ArticleService {
     this.articles.push(article);
     this.save();
   }
+
+  remove(articles: Set<Article>) {
+    this.articles = this.articles.filter((a) => !articles.has(a));
+    this.save();
+  }
 }
