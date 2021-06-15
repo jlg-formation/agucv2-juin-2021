@@ -1,3 +1,4 @@
+import { UserGuard } from './guards/user.guard';
 import { LegalComponent } from './routes/legal/legal.component';
 import { HomeComponent } from './routes/home/home.component';
 import { NgModule } from '@angular/core';
@@ -5,8 +6,12 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'legal', component: LegalComponent },
-  { path: 'stock', loadChildren: () => import('./stock/stock.module').then(m => m.StockModule) },
+  { path: 'legal', component: LegalComponent, canActivate: [UserGuard] },
+  {
+    path: 'stock',
+    loadChildren: () =>
+      import('./stock/stock.module').then((m) => m.StockModule),
+  },
 ];
 
 @NgModule({
