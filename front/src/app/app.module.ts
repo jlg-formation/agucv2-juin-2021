@@ -1,4 +1,4 @@
-import { LOCALE_ID, NgModule } from '@angular/core';
+import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
@@ -15,7 +15,10 @@ registerLocaleData(localeFr, 'fr');
 @NgModule({
   declarations: [AppComponent, HomeComponent, LegalComponent],
   imports: [BrowserModule, AppRoutingModule, LayoutModule],
-  providers: [{ provide: LOCALE_ID, useValue: 'fr' }],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'fr' },
+    { provide: DEFAULT_CURRENCY_CODE, useValue: 'EUR' },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
