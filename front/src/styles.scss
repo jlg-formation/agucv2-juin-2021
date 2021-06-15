@@ -2,6 +2,12 @@
 
 @import "../node_modules/normalize.css/normalize.css";
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: sans-serif;
 }
@@ -46,5 +52,27 @@ button {
         background-color: #777;
       }
     }
+  }
+}
+
+form {
+  display: flex;
+  flex-flow: column;
+  max-width: 25em;
+  width: 100%;
+  margin-top: 2em;
+
+  label {
+    margin-bottom: 1em;
+  }
+
+  input {
+    border: 0.1em solid #ddd;
+    padding: 0.5em 1em;
+    width: 100%;
+  }
+
+  button {
+    margin-top: 3em;
   }
 }
